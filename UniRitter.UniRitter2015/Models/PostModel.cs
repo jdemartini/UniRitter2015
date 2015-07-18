@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
-
 namespace UniRitter.UniRitter2015.Models
 {
     public class PostModel : IModel
@@ -12,14 +9,14 @@ namespace UniRitter.UniRitter2015.Models
 
         [Required]
         [MaxLength(4000)]
-        public string body;
+        public string body { get; set; }
 
         [Required]
         [MaxLength(100)]
-        public string title;
+        public string title { get; set; }
 
-        public Guid author;
+        public Guid authorId { get; set; }
 
-        public string[] tags;
+        public IEnumerable<string> tags { get; set; }
     }
 }

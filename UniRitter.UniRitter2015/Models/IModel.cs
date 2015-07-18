@@ -8,6 +8,6 @@ namespace UniRitter.UniRitter2015.Models
 {
     public interface IModel
     {
-        Guid? id { get; set;}
+        Guid? id { get; set; }
     }
 }
