@@ -6,9 +6,9 @@ using System.Web;
 
 namespace UniRitter.UniRitter2015.Models
 {
-    public class PostModel
+    public class PostModel : IModel
     {
-        public Guid? id;
+        public Guid? id { get; set; }
 
         [Required]
         [MaxLength(4000)]
@@ -18,7 +18,7 @@ namespace UniRitter.UniRitter2015.Models
         [MaxLength(100)]
         public string title;
 
-        public PersonModel author;
+        public Guid author;
 
         public string[] tags;
     }

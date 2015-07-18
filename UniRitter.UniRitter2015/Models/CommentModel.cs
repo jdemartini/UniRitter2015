@@ -6,9 +6,9 @@ using System.Web;
 
 namespace UniRitter.UniRitter2015.Models
 {
-    public class CommentModel
+    public class CommentModel : IModel
     {
-        public Guid? id;
+        public Guid? id { get; set; }
 
         [Required]
         [MaxLength(1000)]
@@ -18,6 +18,6 @@ namespace UniRitter.UniRitter2015.Models
         [MaxLength(50)]
         public string title;
 
-        public PersonModel author;
+        public Guid author;
     }
 }
