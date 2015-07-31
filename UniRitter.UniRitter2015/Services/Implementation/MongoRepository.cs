@@ -12,7 +12,7 @@ namespace UniRitter.UniRitter2015.Services.Implementation
 
         public MongoRepository()
         {
-            this.setup(typeof(TModel).Name.Substring(typeof(TModel).Name.IndexOf("Model")));
+            this.setup(typeof(TModel).Name.Substring(0,  typeof(TModel).Name.LastIndexOf("Model")));
         }
 
         private void setup(string collection)

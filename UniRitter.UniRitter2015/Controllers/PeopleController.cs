@@ -8,8 +8,6 @@ namespace UniRitter.UniRitter2015.Controllers
 {
     public class PeopleController : BaseController<PersonModel>
     {
-        private readonly IRepository<PersonModel> _repo;
-
         public PeopleController(IRepository<PersonModel> repo) : base(repo)
         {
 
