@@ -20,15 +20,15 @@ namespace UniRitter.UniRitter2015.Controllers
         }
 
         // GET: TModel
-        public IHttpActionResult Get()
+        public async Task<IHttpActionResult> Get()
         {
-            return Json(repo.GetAll());
+            return Json(await repo.GetAll());
         }
 
         // GET: TModel/id
-        public IHttpActionResult Get(Guid id)
+        public async Task<IHttpActionResult> Get(Guid id)
         {
-            var data = repo.GetById(id);
+            var data = await repo.GetById(id);
             if (data != null)
             {
                 return Json(data);
@@ -38,30 +38,28 @@ namespace UniRitter.UniRitter2015.Controllers
         }
 
         // POST: TModel
-        public IHttpActionResult Post([FromBody] TModel item)
+        public async Task<IHttpActionResult> Post([FromBody] TModel item)
         {
             if (ModelState.IsValid)
             {
-                var data = repo.Add(item);
+                var data = await repo.Add(item);
                 return Json(data);
             }
             return BadRequest(ModelState);
         }
 
         // PUT: TModel/id
-        public IHttpActionResult Put(Guid id, [FromBody] TModel item)
+        public async Task<IHttpActionResult> Put(Guid id, [FromBody] TModel item)
         {
-            var data = repo.Update(id, item);
+            var data = await repo.Update(id, item);
             return Json(item);
         }
 
         // DELETE: TModel/id
-        public IHttpActionResult Delete(Guid id)
+        public async Task<IHttpActionResult> Delete(Guid id)
         {
-            repo.Delete(id);
+            await repo.Delete(id);
             return StatusCode(HttpStatusCode.NoContent);
         }
-
-
     }
 }
