@@ -35,11 +35,6 @@ namespace UniRitter.UniRitter2015.Specs.Models
             return false;
         }
 
-        public override int GetHashCode()
-        {
-            return id.GetHashCode();
-        }
-
         Guid? IModel.GetId()
         {
             return id;
@@ -58,18 +53,6 @@ namespace UniRitter.UniRitter2015.Specs.Models
                 && url == person.url;
         }
 
-        bool IModel.IsEquals(IModel other)
-        {
-            if (other == null ||
-               other.GetType() != typeof(Person)) return false;
-
-            var person = (Person)other;
-            return
-                id == person.id
-                && firstName == person.firstName
-                && lastName == person.lastName
-                && email == person.email
-                && url == person.url;
-        }
+        
     }
 }

@@ -38,20 +38,6 @@ namespace UniRitter.UniRitter2015.Specs.Models
             return false;
         }
 
-        bool IModel.IsEquals(IModel other)
-        {
-            if (other == null ||
-                other.GetType() != typeof(Post)) return false;
-
-            var post = (Post)other;
-
-            return
-                id == post.id
-                && body == post.body
-                && title == post.title
-                && authorId == post.authorId;
-        }
-
         bool IModel.AttributeEquals(IModel other)
         {
             if (other == null ||

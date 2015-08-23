@@ -19,6 +19,7 @@ namespace UniRitter.UniRitter2015.Specs
         public static IModel postedData;
         public static Type postType;
         public static IEnumerable<IModel> backgroundData;
+        public static Type model;
 
 
         [Given(@"a ""(.*)"" resource")]
@@ -93,7 +94,7 @@ namespace UniRitter.UniRitter2015.Specs
         [Then(@"the posted resource now has an ID")]
         public void ThenThePostedResourceNowHasAnID()
         {
-            Assert.That(result.GetHashCode(), Is.Not.Null);
+            Assert.That(result.GetId(), Is.Not.Null);
         }
 
         [Then(@"the data matches that id")]

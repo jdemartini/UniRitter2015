@@ -9,7 +9,6 @@ namespace UniRitter.UniRitter2015.Specs.Models
     public interface IModel
     {
         bool AttributeEquals(IModel compareTo);
-        bool IsEquals(IModel compareTo);
         int GetHashCode();
         Guid? GetId();
     }
