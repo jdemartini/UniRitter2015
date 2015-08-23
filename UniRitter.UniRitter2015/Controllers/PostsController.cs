@@ -9,6 +9,6 @@ namespace UniRitter.UniRitter2015.Controllers
     {
         public PostsController(IRepository<PostModel> repo) : base(repo)
         {
-                    }
+        }
     }
 }
